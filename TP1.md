@@ -58,7 +58,7 @@ Dossier1 ; que se passe-t-il ?
 11. Il faut alors utiliser la commande `rm -rf` pour supprimer ce dossier Dossier2.
 
 ## Commandes importantes
-###Questions : 
+### Questions : 
 1. Quelle commande permet d’afficher l’heure ? A quoi sert la commande time ?
 2. Dans votre dossier personnel, tapez successivement les commandes ls puis la ; que peut-on en déduire
 sur les fichiers commençant par un point ?
