@@ -128,7 +128,6 @@ Si on modifie toto.... Avec la commande suivante :`echo &#39;Hello !&#39; &gt; t
 19. La commande `man -k conversion | wc -l` nous permet de compter le nombre de pages de manuel comportent le mot conversion dans leur description.
 20. Il faut utiliser la commande `sudo find / -name passwd` nous permet d'avoir tout les fichiers (et leur chemin) se nommmant `passwd`.
 21. La commande `find / -name passwd 2> /dev/null > ~/list_passwd_files.txt` nous permet d'enregistrer la liste de fichiers trouvés précédement, dans un fichier texte (et les erreur dans le fichier null).
-22.
 23. Il faut utiliser la commande `locate history.log` pour trouver le fichier history.log (il faut au préalable installer mlocate). On obtient le résultat suivant : `/var/log/apt/history.log`
 24. On créer un fichier avec la commande `touch`. Cependant on n'arrive pas à retrouver ce fichier avec la commande `locate`. Un rafraîchissement est nécessaire, pour cela il faut utiliser la commande `updatedb`.
 # Exercice 3 :
