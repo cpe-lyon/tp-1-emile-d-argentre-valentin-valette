@@ -41,17 +41,17 @@ Dossier1 ; que se passe-t-il ?
 5. On ne peut pas accéder à /root. Pour cela il faut se mettre un super utilisateur et donc réaliser la commande suivante : `sudo cd /root`
 6. Cette commande nous demande de renseigner le mot de passe pour pouvoir accéder au dossier root. Le mot de passe est demandé pour éviter que n'importe qui atteigne ce répertoire.
 7. Il faut réliser la série de commande suivante pour réalisé l'arborescence :
-: val@serverofvalentin:~$ mkdir Dossier1 <br/>
-: val@serverofvalentin:~$ mkdir Dossier2 <br/>
-: val@serverofvalentin:~$ cd Dossier1 <br/>
-: val@serverofvalentin:~/Dossier1$ touch Fichier1 <br/>
-: val@serverofvalentin:~/Dossier1$ cd .. <br/>
-: val@serverofvalentin:~$ cd Dossier2 <br/>
-: val@serverofvalentin:~/Dossier2$ mkdir Dossier2.1 <br/>
-: val@serverofvalentin:~/Dossier2$ mkdir Dossier2.2 <br/>
-: val@serverofvalentin:~/Dossier2$ cd Dossier2.2 <br/>
-: val@serverofvalentin:~/Dossier2/Dossier2.2$ touch Fichier2 <br/>
-: val@serverofvalentin:~/Dossier2/Dossier2.2$ touch Fichier3 <br/>
+> val@serverofvalentin:~$ mkdir Dossier1 <br/>
+> val@serverofvalentin:~$ mkdir Dossier2 <br/>
+> val@serverofvalentin:~$ cd Dossier1 <br/>
+> val@serverofvalentin:~/Dossier1$ touch Fichier1 <br/>
+> val@serverofvalentin:~/Dossier1$ cd .. <br/>
+> val@serverofvalentin:~$ cd Dossier2 <br/>
+> val@serverofvalentin:~/Dossier2$ mkdir Dossier2.1 <br/>
+> val@serverofvalentin:~/Dossier2$ mkdir Dossier2.2 <br/>
+> val@serverofvalentin:~/Dossier2$ cd Dossier2.2 <br/>
+> val@serverofvalentin:~/Dossier2/Dossier2.2$ touch Fichier2 <br/>
+> val@serverofvalentin:~/Dossier2/Dossier2.2$ touch Fichier3 <br/>
 8. Avec la commande `rm` on peut uniquement supprimer des fichiers.
 9. C'est la commande `rm -rf nom_du_dossier` si le dossier est plein (pour tout vider) et `rmdir nom_du_dossier` si le dossier est vide.
 10. La commande `rmdir` on ne peut pas supprimer un dossier rempli.
@@ -98,21 +98,29 @@ précédemment
 1. C'est la commande `date` qui permet d'afficher l'heure. La commande `time` permet de déterminer le temps d'exécution d'un processus.
 2. La commande `ls` nous affiche uniquement les dossier `Dossier1` et `Dossier2`. La commande `la` nous affiche d'autre fichier. Les fichiers avec un point sont donc visible uniquement avec la commande `la` (ce sont des fichiers cachées).
 3. Pour trouver ou se situe la commande `ls` il faut taper `sudo find / -name ls`. On trouve donc les chemins suivants : 
-: /usr/lib/klibc/bin/ls <br/>
-: /usr/bin/ls <br/>
-: /snap/core/7917/bin/ls <br/>                                                                                      
-: /snap/core/7917/usr/lib/klibc/bin/ls <br/>
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14. 
+> /usr/lib/klibc/bin/ls <br/>
+> /usr/bin/ls <br/>
+> /snap/core/7917/bin/ls <br/>                                                                                      
+> /snap/core/7917/usr/lib/klibc/bin/ls <br/>
+4. Aucune entrée de manuel pour ll.
+On voit avec alias que la commande `ll` est en faite un alias de la commande `ls -alF`.
+5. On utilise la commande `ls -&gt; ls /bin`.
+6. La commande `ls` liste les fichiers ou dossiers sauf les fichiers cachés présent dans un dossier cible.
+7. On utilise la commande `pwd` pour connaître le chemin complet du dossier courant.
+8. La commande `echo ‘yo’ &gt; plop` écrit `&quot;yo&quot;` dans le fichier plop, mais cela écrase le contenu.précédent. La première fois que la commande est exécutée, cela crée le fichier plop et écrit yo. Laseconde, on ecrase le premier yo pour le remplacer par un ‘nouveau’ yo.
+9. La différence par rapport à la précédente commande est que l’operateur &gt;&gt; permet ici d&#39;écrire à lafin du fichier plop (retour à la ligne) au lieu d’écraser le contenu.
+10. La commande `file` permet de déterminer le type du fichier et des spécificités.
+11. Si on execute les commandes suivantes
+`echo &#39;Hello Toto !&#39; &gt; toto` <br/>
+`ln toto titi` <br/>
+On obtient un fichier toto qui contient la chaine demandée, ainsi `qu&#39;` un lien titi qui renvoie vers toto.
+Si on modifie toto.... Avec la commande suivante :`echo &#39;Hello !&#39; &gt; toto`. On observe que titi fonctionne toujours et affiche le fichier modifié. En revanche, si on supprimetoto avec `rm toto` titi affiche le dernier contenu connu de toto.
+12. Si on crée maintenant un lien de tutu vers titi avec la commande suivante, et qu&#39;on modifie titi : `ln -s titi tutu`, `echo &#39; Hello!&#39; &gt; titi`. On remarque que titi a bien changé, mais pas tutu.Si on supprime titi (`rm tititutu`) cela affiche toujours la dernière version avant suppression de titi.
+13. On utilise le raccourci CTRL + C pour interrompre le défilement à l'écran.
+14. Pour afficher les 5 premières lignes de `/var/log/syslog`, les quinze dernières et les lignes de 10 à 20. <br/>
+>head /var/log/syslog -n 5
+>tail /var/log/syslog -n 5
+>head -n 20 /var/log/syslog | tail -n 10
 15. La commande `dmesg|less` permet d'afficher le buffer du kernel (mémoire tampon). Le `less` permet de parcourir ligne à ligne ce buffer. En effet si on réalise la commange `dmesg` tout seul on a le buffer en entier qui apparaît.
 16. Le fichier `/etc/passwd` contient les comptes ainsi que les répertoires associés présent sur la machine. Pour afficher le mannuel il faut réaliser la commande `man passwd`.
 17. Il faut réaliser la commande `sort -r /etc/passwd` pour un affichage des colonnes dans l'ordre alphabétique inverse (l'attribut `sort` permet d'affiché les colonnes trié et `-r` permet d'afficher l'inverse de sort).
