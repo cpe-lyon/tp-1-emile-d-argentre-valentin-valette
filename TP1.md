@@ -41,17 +41,17 @@ Dossier1 ; que se passe-t-il ?
 5. On ne peut pas accéder à /root. Pour cela il faut se mettre un super utilisateur et donc réaliser la commande suivante : `sudo cd /root`
 6. Cette commande nous demande de renseigner le mot de passe pour pouvoir accéder au dossier root. Le mot de passe est demandé pour éviter que n'importe qui atteigne ce répertoire.
 7. Il faut réliser la série de commande suivante pour réalisé l'arborescence :
-> val@serverofvalentin:~$ mkdir Dossier1 <br/>
-> val@serverofvalentin:~$ mkdir Dossier2 <br/>
-> val@serverofvalentin:~$ cd Dossier1 <br/>
-> val@serverofvalentin:~/Dossier1$ touch Fichier1 <br/>
-> val@serverofvalentin:~/Dossier1$ cd .. <br/>
-> val@serverofvalentin:~$ cd Dossier2 <br/>
-> val@serverofvalentin:~/Dossier2$ mkdir Dossier2.1 <br/>
-> val@serverofvalentin:~/Dossier2$ mkdir Dossier2.2 <br/>
-> val@serverofvalentin:~/Dossier2$ cd Dossier2.2 <br/>
-> val@serverofvalentin:~/Dossier2/Dossier2.2$ touch Fichier2 <br/>
-> val@serverofvalentin:~/Dossier2/Dossier2.2$ touch Fichier3 <br/>
+> val@serverofvalentin:$ mkdir Dossier1 <br/>
+> val@serverofvalentin:$ mkdir Dossier2 <br/>
+> val@serverofvalentin:$ cd Dossier1 <br/>
+> val@serverofvalentin:/Dossier1$ touch Fichier1 <br/>
+> val@serverofvalentin:/Dossier1$ cd .. <br/>
+> val@serverofvalentin:$ cd Dossier2 <br/>
+> val@serverofvalentin:/Dossier2$ mkdir Dossier2.1 <br/>
+> val@serverofvalentin:/Dossier2$ mkdir Dossier2.2 <br/>
+> val@serverofvalentin:/Dossier2$ cd Dossier2.2 <br/>
+> val@serverofvalentin:/Dossier2/Dossier2.2$ touch Fichier2 <br/>
+> val@serverofvalentin:/Dossier2/Dossier2.2$ touch Fichier3 <br/>
 8. Avec la commande `rm` on peut uniquement supprimer des fichiers.
 9. C'est la commande `rm -rf nom_du_dossier` si le dossier est plein (pour tout vider) et `rmdir nom_du_dossier` si le dossier est vide.
 10. La commande `rmdir` on ne peut pas supprimer un dossier rempli.
